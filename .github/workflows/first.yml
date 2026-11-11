@@ -9,13 +9,19 @@ jobs:
         - name: Checkout Repository
           uses: actions/checkout@v4
           
-        - name: Welcome Message 
-          run: echo "My first workflow"
-  
-        - name: List Files
-          run: ls
+        - name: List Files and Read README.md 
+          run: |
+             echo "My first workflow"
+             ls -ltra
+             cat README.md
 
-        - name: Read File
-          run: cat .github/workflows/first.yml 
+        - name: Generate ASCII Artwork
+          run: cowsay -f dragon "Run for cover , the dragon is coming! " >> dragon.txt
+          
+        # - name: List Files
+        #   run: ls
+
+        # - name: Read File
+        #   run: cat .github/workflows/first.yml 
 
 
